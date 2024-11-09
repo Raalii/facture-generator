@@ -18,14 +18,14 @@ export default function InvoiceGenerator() {
 
   const [formData, setFormData] = useState<InvoiceFormData>({
     invoiceType: "classic",
-    invoiceNumber: "50",
+    invoiceNumber: "1",
     date: new Date().toISOString().split("T")[0],
     selectedMonth: undefined,
     clientType: "regular",
     selectedClientId: 1,
     newClientName: "",
-    price: "10",
-    tva: "10",
+    price: "",
+    tva: "0",
     travelType: "ALLER",
     pickupLocation: "",
     dropoffLocation: "",
