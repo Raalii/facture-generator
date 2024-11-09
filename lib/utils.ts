@@ -81,7 +81,7 @@ export const generatePDF = (formData: InvoiceFormData) => {
     pdf.text("DATE: ", PDF_CONFIG.margins.left, currentY);
     pdf.setFont("Poppins", "bold");
     pdf.text(
-      formData.date,
+      formData.date || "",
       PDF_CONFIG.margins.left + pdf.getTextWidth("DATE: "),
       currentY
     );
@@ -230,7 +230,9 @@ export const generatePDF = (formData: InvoiceFormData) => {
   );
 
   // Sauvegarde du PDF
-  pdf.save(`facture-${formData.invoiceNumber}.pdf`);
+  pdf.save(
+    `facture-${formData.invoiceNumber}_${formData.newClientName || ""}.pdf`
+  );
 };
 
 export const useIsClient = () => {
